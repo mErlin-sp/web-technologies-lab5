@@ -50,5 +50,24 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
-
 })(jQuery);
+
+function addUser(user) {
+    $.post(`/admin/add_user`, user, function () {
+        alert('User added')
+    }).fail(function (err) {
+        alert('User not added')
+    }).always(function () {
+        location.reload()
+    })
+}
+
+function deleteUser(userID) {
+    $.get(`/admin/delete_user/${userID}`, function () {
+        alert('User deleted')
+    }).fail(function (err) {
+        alert('User not deleted')
+    }).always(function () {
+        location.reload()
+    })
+}

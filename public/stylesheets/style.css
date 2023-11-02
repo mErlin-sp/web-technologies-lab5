@@ -1,12 +1,17 @@
-/*body {*/
-/*  padding: 50px;*/
-/*  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
-/*}*/
-
-/*a {*/
-/*  color: #00B7FF;*/
-/*}*/
-
-.success{
+.success, .error {
     margin: 100px;
+}
+
+#users {
+    margin: 100px;
+    padding: 10px;
+}
+
+#users td, th {
+    width: 200px;
+    padding: 5px;
+}
+
+#users td input {
+    width: 100%;
 }

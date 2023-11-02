@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    table#users
+        tr
+            th ID
+            th Name
+            th Group
+            th Variant
+            th Tel
+            th Email
+            th Password
+            th Status
+            th Delete
+        each row in rows
+            tr
+                td=row.ID
+                td=row.NAME
+                td=row.GROUP
+                td=row.VARIANT
+                td=row.TEL
+                td=row.EMAIL
+                td=row.PASSWORD
+                td=row.STATUS
+                td
+                    input(type='button' value='X' onclick=`deleteUser(${row.ID})`)
+        tr
+            td
+                input(type='text' placeholder='ID').id
+            td
+                input(type='text' placeholder='Name').name
+            td
+                input(type='text' placeholder='Group').group
+            td
+                input(type='text' placeholder='Variant').variant
+            td
+                input(type='text' placeholder='Tel').tel
+            td
+                input(type='text' placeholder='Email').email
+            td
+                input(type='text' placeholder='Password').pass
+            td
+                input(type='text' placeholder='Status').status
+            td
+                input(type='button' value='Add' onclick=`addUser({
+                        id: $('.id').val(),
+                        name: $('.name').val(),
+                        group: $('.group').val(),
+                        variant: $('.variant').val(),
+                        tel: $('.tel').val(),
+                        email: $('.email').val(),
+                        pass: $('.pass').val(),
+                        status: $('.status').val()
+                    })`)
